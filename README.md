@@ -96,8 +96,3 @@ The `[neutron]` section in `nova.conf` and neutron's `keystonemiddleware` config
 ##### Why Horizon Worked With Admin (Capital A)
 
 Horizon bypassed the role name entirely because it uses project-scoped tokens, which trigger a legacy is_admin flag that grants access before the role name is ever checked. Skyline uses system-scoped tokens by design, which never set that flag, forcing every policy check to fall through to an explicit case-sensitive role name comparison — where Admin silently failed against every rule written for admin.
-
-## 🗺️ TODO
-
-- [ ] Guide: Juju charm for Skyline
-- [ ] Guide: Load balancing between multiple Skyline instances (HAProxy)
